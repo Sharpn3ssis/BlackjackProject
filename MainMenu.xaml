@@ -1,0 +1,50 @@
+﻿<Window x:Class="BlackjackProject.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackjackProject"
+        mc:Ignorable="d"
+        Title="MainMenu" 
+        Height="782" Width="1082">
+    <Grid Background="#FF18381C">
+        <Label Content="BlackJack" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial Black" FontSize="50"/>
+        <Button Content="START" HorizontalAlignment="Left" Margin="865,646,0,0" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" FontFamily="Arial Black" BorderBrush="White" FontSize="20" Width="143" Height="72" Click="StartButton_Click"/>
+        <Grid Margin="22,115,436,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Playername" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="0"/>
+            <Button x:Name="PlayerSet" Content="SET" HorizontalAlignment="Right"  VerticalAlignment="Center" Foreground="#FF13FF00" FontFamily="Arial Black" FontSize="15" Grid.Row="1" Grid.Column="0" Background="{x:Null}" BorderBrush="#FF13FF00" Width="72" Height="35" Visibility="Collapsed" Click="SetButton"/>
+            <TextBox x:Name="PlayerName" Width="200px" HorizontalAlignment="Left"  Grid.Row="1" Background="{x:Null}" BorderBrush="White" Foreground="White" TextChanged="PlayerName_TextChanged" FontSize="20" FontFamily="Segoe UI Black" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="35"/>
+
+            <Label Content="Starting Balance" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="2"/>
+            <Label x:Name="BalanceValue" Content="Default" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="3" Grid.Column="1"/>
+            <Slider x:Name="BalanceSlider" Width="200px" HorizontalAlignment="Left" Minimum="0" Maximum="10000" IsSnapToTickEnabled="True" TickFrequency="100" Grid.Row="3" ValueChanged="BalanceSlider_ValueChanged" Value="1000"/>
+
+            <Label Content="Win Multiply" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="4"/>
+            <Label x:Name="WinValue" Content="Default" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="5" Grid.Column="1"/>
+            <Slider x:Name="WinSlider" Width="200px" HorizontalAlignment="Left" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="0.5" Grid.Row="5" ValueChanged="WinSlider_ValueChanged" Maximum="5"/>
+
+            <Label Content="Win Multiply 21" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="6"/>
+            <Label x:Name="Win21Value" Content="Default" HorizontalAlignment="Left"  VerticalAlignment="Top" Foreground="White" FontFamily="Cascadia Mono SemiBold" FontSize="15" Grid.Row="7" Grid.Column="1"/>
+            <Slider x:Name="Win21Slider" Width="200px" HorizontalAlignment="Left" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="0.5" Grid.Row="7" ValueChanged="Win21Slider_ValueChanged" Value="2" Maximum="5"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
